@@ -1428,8 +1428,8 @@
         }
 
         // Sales Counter (persistente)
-        let salesCount = getStoredCounter('nsx_salesCount', );
-        document.getElementById('sales-count').textContent = salesCount;97);
+        let salesCount = getStoredCounter('nsx_salesCount', 98);
+        document.getElementById('sales-count').textContent = salesCount;
         setStoredCounter('nsx_salesCount', salesCount);
         setInterval(() => {
             salesCount += Math.floor(Math.random() * 3) + 1;
@@ -1486,7 +1486,7 @@
         });
  
         // User Counter (persistente)
-        let userCount = getStoredCounter('nsx_userCount', 994);
+        let userCount = getStoredCounter('nsx_userCount', 997);
         document.getElementById('user-count').textContent = userCount.toLocaleString('pt-BR');
         setStoredCounter('nsx_userCount', userCount);
         setInterval(() => {
