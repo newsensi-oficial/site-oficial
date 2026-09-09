@@ -1429,7 +1429,7 @@
 
         // Sales Counter (persistente)
         let salesCount = getStoredCounter('nsx_salesCount', );
-        document.getElementById('sales-count').textContent = salesCount;97
+        document.getElementById('sales-count').textContent = salesCount;97);
         setStoredCounter('nsx_salesCount', salesCount);
         setInterval(() => {
             salesCount += Math.floor(Math.random() * 3) + 1;
