@@ -197,123 +197,90 @@
         .sales-counter .fire-icon { color: #00ff41; width: 14px; height: 14px; }
         .sales-counter .count { color: #00ff41; font-variant-numeric: tabular-nums; }
  
-        /* Notifications */
+        /* Notificações de compra — cápsula compacta (vidro escuro + anel neon no ícone) */
         .notifications {
             position: fixed;
-            bottom: 16px;
-            left: 16px;
+            bottom: 14px;
+            left: 12px;
             z-index: 999;
-            max-width: 320px;
+            max-width: min(300px, calc(100vw - 24px));
             pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
         }
 
         @keyframes notif-in {
-            from { transform: translateX(-120%); opacity: 0; }
-            to   { transform: translateX(0);     opacity: 1; }
+            from { transform: translateY(14px) scale(0.92); opacity: 0; }
+            to   { transform: translateY(0)    scale(1);    opacity: 1; }
         }
         @keyframes notif-out {
-            from { transform: translateX(0);     opacity: 1; max-height: 100px; margin-bottom: 8px; }
-            to   { transform: translateX(-120%); opacity: 0; max-height: 0;     margin-bottom: 0;   }
+            from { transform: translateY(0)   scale(1);    opacity: 1; }
+            to   { transform: translateY(8px) scale(0.96); opacity: 0; }
         }
 
         .notification {
-            background: rgba(15,15,15,0.97);
-            border: 1px solid rgba(0,255,65,0.35);
-            border-left: 3px solid #00ff41;
-            border-radius: 12px;
-            padding: 10px 12px;
-            margin-bottom: 8px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,255,65,0.08);
             display: flex;
             align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            animation: notif-in 0.45s cubic-bezier(0.22,1,0.36,1) forwards;
-            overflow: hidden;
+            gap: 9px;
+            max-width: 100%;
+            padding: 6px 15px 6px 6px;
+            background: linear-gradient(135deg, rgba(22,22,22,0.9), rgba(6,6,6,0.9));
+            border: 1px solid rgba(0,255,65,0.28);
+            border-radius: 9999px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.55), 0 0 14px rgba(0,255,65,0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: notif-in 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
         }
 
         .notification.removing {
-            animation: notif-out 0.4s ease forwards;
+            animation: notif-out 0.3s ease forwards;
         }
 
-        .notif-avatar {
-            width: 40px;
-            height: 40px;
+        .notif-icon {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
             font-size: 15px;
-            color: #000;
-            flex-shrink: 0;
-            text-transform: uppercase;
-            letter-spacing: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(0,255,65,0.3), rgba(0,255,65,0.06));
+            border: 1px solid rgba(0,255,65,0.55);
+            box-shadow: 0 0 10px rgba(0,255,65,0.35);
         }
 
-        .notif-body { flex: 1; min-width: 0; }
-
-        .notif-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-            margin-bottom: 2px;
+        .notif-icon.vip {
+            background: radial-gradient(circle at 30% 30%, rgba(234,179,8,0.32), rgba(234,179,8,0.06));
+            border-color: rgba(234,179,8,0.65);
+            box-shadow: 0 0 10px rgba(234,179,8,0.35);
         }
 
-        .notif-name {
+        .notif-text { min-width: 0; line-height: 1.25; }
+
+        .notif-line1 {
+            font-size: 12px;
             font-weight: 700;
-            font-size: 13px;
             color: #fff;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .notif-time {
-            font-size: 10px;
-            color: #4b5563;
-            flex-shrink: 0;
-            white-space: nowrap;
-        }
-
-        .notif-product {
-            font-size: 12px;
-            color: #d1d5db;
+        .notif-line2 {
+            font-size: 11px;
+            font-weight: 600;
+            color: #9ca3af;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 2px;
         }
 
-        .notif-footer {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 11px;
-            color: #6b7280;
-        }
-
-        .notif-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #00ff41;
-            flex-shrink: 0;
-            animation: pulse-scale 1.5s infinite;
-        }
-
-        .notif-badge {
-            display: inline-block;
-            background: rgba(0,255,65,0.15);
-            color: #00ff41;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 1px 6px;
-            border-radius: 9999px;
-            border: 1px solid rgba(0,255,65,0.3);
-        }
+        .notif-line2 b { color: #00ff41; font-weight: 800; }
+        .notif-line2.vip b { color: #eab308; }
  
         /* Hero Section */
         .hero {
@@ -854,7 +821,8 @@
  
         /* Footer */
         footer {
-            padding: 60px 16px 40px;
+            /* o espaço extra embaixo (~90px) é pra a barra fixa do rodapé não cobrir o fim da página */
+            padding: 60px 16px calc(40px + 90px + env(safe-area-inset-bottom, 0px));
             border-top: 1px solid #1e1e1e;
             background: #000;
         }
@@ -995,39 +963,80 @@
             .packages h2, .faq h2 { font-size: 3.75rem; }
         }
  
-        /* STICKY CTA */
+        /* STICKY CTA — barra fixa no rodapé: preço à esquerda + botão à direita */
         .sticky-cta {
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            right: 0;
+            bottom: 0;
             z-index: 9996;
             display: none;
+            padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+            background: rgba(0, 0, 0, 0.92);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 255, 65, 0.35);
+            box-shadow: 0 -10px 30px rgba(0, 255, 65, 0.12);
         }
  
         .sticky-cta.show {
             display: block;
-            animation: sticky-slide-up 0.5s ease-out;
+            animation: sticky-slide-up 0.4s ease-out;
         }
  
         @keyframes sticky-slide-up {
-            from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .sticky-cta-inner {
+            max-width: 520px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .sticky-cta-price { line-height: 1.1; min-width: 0; }
+
+        .sticky-cta-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .sticky-cta-value {
+            display: block;
+            font-size: 24px;
+            font-weight: 900;
+            color: #00ff41;
+            text-shadow: 0 0 12px rgba(0, 255, 65, 0.45);
+            white-space: nowrap;
         }
  
-        .sticky-cta a {
+        .sticky-cta a.sticky-cta-btn {
+            flex-shrink: 0;
             display: inline-block;
             background: linear-gradient(to right, #00ff41, #00e639);
             color: black;
             font-weight: 900;
-            padding: 12px 18px;
+            padding: 13px 20px;
             border-radius: 9999px;
             text-decoration: none;
-            box-shadow: 0 25px 50px -12px rgba(0, 255, 65, 0.5);
+            box-shadow: 0 8px 24px -6px rgba(0, 255, 65, 0.55);
             text-transform: uppercase;
             letter-spacing: 0.04em;
             font-size: 13px;
+            white-space: nowrap;
         }
+
+        /* Quando a barra aparece, as notificações de compra sobem pra não ficarem escondidas atrás dela */
+        .notifications { transition: bottom 0.3s ease; }
+        body.sticky-bar-visible .notifications { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
  
         /* Provas sociais */
         .cta-social-proof {
@@ -1096,9 +1105,8 @@
                 <span><strong style="color: #00ff41; font-size: 1.25rem;" id="user-count">994</strong> <span style="color: #d1d5db;">Players online agora!</span></span>
             </div>
  
-            <!-- Wistia Video (carregamento adiado: só baixa o player quando o vídeo
-                 está perto de entrar na tela, pra não competir com o resto do site
-                 pelos primeiros segundos de carregamento da página) -->
+            <!-- Wistia Video (carregamento adiado: o player só é baixado depois que o
+                 resto da página crítica terminou de carregar) -->
             <div class="video-placeholder" id="vslVideoWrapper">
                 <style>
                     wistia-player[media-id='m8pcxycab8']:not(:defined) { 
@@ -1111,7 +1119,7 @@
                 <wistia-player media-id="m8pcxycab8" aspect="1.7777777777777777"></wistia-player>
             </div>
  
-            <a href="#pacotes" class="cta-button animate-glow">
+            <a href="#pacotes" class="cta-button animate-glow" id="heroCta">
                 🎯 QUERO MEU PAINEL AGORA!
             </a>
  
@@ -1208,7 +1216,7 @@
     
     <!-- ===== TESTIMONIALS - NOVO CARROSSEL COM 11 IMAGENS ===== -->
     <section class="testimonials">
-        <h2>Veja o que <span class="text-neon">Nossos Clientes</span> Dizem</h2>
+        <h2>Veja o que <span class="text-neon">Nossos Alunos</span> Dizem</h2>
         <p class="testimonials-subtitle">Feedbacks reais de quem já está usando!</p>
  
         <div class="carousel-wrapper">
@@ -1269,8 +1277,8 @@
  
     <!-- Packages Section -->
     <section id="pacotes" class="packages">
-        <h2>Escolha Seu <span class="text-neon">Plano</span> Abaixo</h2>
-        <p class="packages-subtitle">Todos os PAINEL incluem certificados</p>
+        <h2>Escolha Seu <span class="text-neon">PAINEL VIP</span> Abaixo</h2>
+        <p class="packages-subtitle">Todos os PAINEL incluem suporte e garantia</p>
  
         <div class="packages-grid">
             <!-- IPHONE/IOS -->
@@ -1281,11 +1289,12 @@
                 <h3 class="package-title"> <span class="text-neon-red"> </span> IPHONE/IOS</h3>
                 <p class="package-subtitle">Painel XIT mais vendido iPhone/iOS!</p>
                 <ul class="package-features">
-                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>PAINEL XIT FFH4X + BYPASS</span></li>
+                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Painel Mod Menu FFH4X + BYPASS</span></li>
                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>PROXY HS ALTO + HS PESCOÇO</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Full Capa</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
-                    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>UMP 98% AUTOMÁTICA</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Mira Automática 100% Full Capa</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Todas Armas</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>+Rastreamento de cabeça</span></li>
+                    <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>UMP AUTOMÁTICA</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Aim Kill </span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Painel Fov + ESP</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Full HeadShot</span></li>
@@ -1349,7 +1358,7 @@
                 <div class="package-icon" style="background: #111; border: 3px solid #eab308; box-shadow: 0 0 24px rgba(234,179,8,0.4); overflow:hidden;">
                     <img src="img site/CLT.jpg" alt="Painel CLT Premium" width="96" height="96" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
                 </div>
-                <h3 class="package-title">PAINEL CLT</h3>
+                <h3 class="package-title">PAINEL CLT PREMIUM</h3>
                 <p class="package-subtitle" style="color:#eab308;font-weight:700;">ACESSO VITALÍCIO PAINEL CLT VIP</p>
                 <ul class="package-features">
                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>PAINEL CLT (Android x iPhone/IOS)</span></li>
@@ -1455,7 +1464,13 @@
  
     <!-- Sticky CTA -->
     <div class="sticky-cta" id="sticky-cta">
-        <a href="#pacotes">GARANTIR MEU XIT!</a>
+        <div class="sticky-cta-inner">
+            <div class="sticky-cta-price">
+                <span class="sticky-cta-label">A partir de</span>
+                <span class="sticky-cta-value" id="stickyPriceValue">R$29,00</span>
+            </div>
+            <a href="#pacotes" class="sticky-cta-btn">GARANTIR MEU XIT!</a>
+        </div>
     </div>
  
     <!-- Footer -->
@@ -1596,9 +1611,9 @@
                 "Andrade","Cunha","Lopes","Monteiro","Freitas","Mendes","Cavalcante"
             ],
             products: [
-                { name: "Painel XIT Android",      emoji: "🎯", badge: "ANDROID",  color: "#00ff41" },
-                { name: "Painel XIT iPhone/iOS",   emoji: "🍎", badge: "iOS",      color: "#00ff41" },
-                { name: "Painel CLT Premium",      emoji: "👑", badge: "VIP",      color: "#eab308" },
+                { name: "Painel XIT Android",      emoji: "🎯", vip: false },
+                { name: "Painel XIT iPhone/iOS",   emoji: "🍎", vip: false },
+                { name: "Painel CLT Premium",      emoji: "👑", vip: true  },
             ],
             cities: [
                 "São Paulo, SP","Rio de Janeiro, RJ","Belo Horizonte, MG","Salvador, BA",
@@ -1610,20 +1625,10 @@
                 "Ribeirão Preto, SP","Uberlândia, MG","Sorocaba, SP","Feira de Santana, BA",
                 "Joinville, SC","Londrina, PR","Niterói, RJ","Juiz de Fora, MG",
                 "Ananindeua, PA","Duque de Caxias, RJ","Contagem, MG","Santo André, SP"
-            ],
-            avatarColors: [
-                ["#00ff41","#00c832"],["#eab308","#ca8a04"],["#3b82f6","#1d4ed8"],
-                ["#f97316","#c2410c"],["#a855f7","#7e22ce"],["#ec4899","#be185d"],
-                ["#06b6d4","#0e7490"],["#10b981","#047857"]
-            ],
-            timeAgo: ["agora mesmo","há 1 min","há 2 min","há 3 min","há 4 min","há 5 min"]
+            ]
         };
 
         function getRand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-
-        function getInitials(first, last) {
-            return (first[0] + last[0]).toUpperCase();
-        }
 
         // Ocultar nome parcialmente para privacidade (realismo)
         function maskName(first, last) {
@@ -1631,52 +1636,43 @@
             return first + ' ' + maskedLast;
         }
 
+        // Mostrar a cidade no cartão? (true = mostra, mas o cartão fica bem mais largo)
+        const MOSTRAR_CIDADE = false;
+
         function showNotification() {
-            const firstName  = getRand(notifData.firstNames);
-            const lastName   = getRand(notifData.lastNames);
-            const product    = getRand(notifData.products);
-            const city       = getRand(notifData.cities);
-            const timeAgo    = getRand(notifData.timeAgo);
-            const avatarPair = getRand(notifData.avatarColors);
-            const initials   = getInitials(firstName, lastName);
+            const firstName   = getRand(notifData.firstNames);
+            const lastName    = getRand(notifData.lastNames);
+            const product     = getRand(notifData.products);
+            const city        = getRand(notifData.cities);
             const displayName = maskName(firstName, lastName);
+            const vipClass    = product.vip ? ' vip' : '';
 
             const notif = document.createElement('div');
             notif.className = 'notification';
             notif.innerHTML = `
-                <div class="notif-avatar" style="background: linear-gradient(135deg, ${avatarPair[0]}, ${avatarPair[1]});">
-                    ${initials}
-                </div>
-                <div class="notif-body">
-                    <div class="notif-header">
-                        <span class="notif-name">${displayName}</span>
-                        <span class="notif-time">${timeAgo}</span>
-                    </div>
-                    <div class="notif-product">${product.emoji} ${product.name}</div>
-                    <div class="notif-footer">
-                        <span class="notif-dot"></span>
-                        <span>${city}</span>
-                        <span class="notif-badge" style="color:${product.color};border-color:${product.color}40;background:${product.color}18;">${product.badge}</span>
-                    </div>
+                <div class="notif-icon${vipClass}">${product.emoji}</div>
+                <div class="notif-text">
+                    <div class="notif-line1">${displayName} comprou</div>
+                    <div class="notif-line2${vipClass}"><b>${product.name}</b>${MOSTRAR_CIDADE ? ' · ' + city : ''}</div>
                 </div>
             `;
 
             const container = document.getElementById('notifications');
             container.appendChild(notif);
 
-            // Remove com animação suave
+            // Fica 4,5s na tela e some com animação suave
             setTimeout(() => {
                 notif.classList.add('removing');
-                setTimeout(() => notif.remove(), 400);
-            }, 5500);
+                setTimeout(() => notif.remove(), 300);
+            }, 4500);
         }
 
-        // Primeira notificação logo no início
-        setTimeout(() => showNotification(), 2000);
+        // Primeira notificação depois de uns 8s (não aparece logo de cara)
+        setTimeout(() => showNotification(), 8000);
 
-        // Disparo com intervalo variável (mais realista)
+        // Frequência baixa: uma nova a cada 20s–40s, com intervalo variável (mais natural)
         function scheduleNext() {
-            const delay = Math.floor(Math.random() * 6000) + 5000; // 5s a 11s
+            const delay = Math.floor(Math.random() * 20000) + 20000; // 20s a 40s
             setTimeout(() => {
                 showNotification();
                 scheduleNext();
@@ -1770,43 +1766,58 @@
             icon.classList.toggle('open');
         }
  
-        // Sticky CTA — some no FAQ E no footer
+        // Sticky CTA — regra: aparece depois que o botão grande do topo sai da tela;
+        // some só enquanto a seção de planos está na tela (lá já existem os botões de compra);
+        // volta depois dos planos e fica até o final da página (inclusive no rodapé).
         const stickyCta = document.getElementById('sticky-cta');
-        const faqEl = document.getElementById('faq');
-        const footerEl = document.getElementById('footer');
+        const heroCtaEl = document.getElementById('heroCta');
+        const packagesEl = document.getElementById('pacotes');
+
+        // Preço da barra = menor preço entre os planos, lido direto dos cards
+        // (assim, se você mudar os preços dos planos, a barra acompanha sozinha)
+        (function preencherPrecoDaBarra() {
+            const alvo = document.getElementById('stickyPriceValue');
+            if (!alvo) return;
+            const textos = Array.from(document.querySelectorAll('.package-price')).map(el => el.textContent.trim());
+            const valores = textos.map(t => parseFloat(t.replace(/[^\d,]/g, '').replace(',', '.')));
+            const validos = valores.filter(v => !isNaN(v));
+            if (!validos.length) return; // mantém o preço de reserva escrito no HTML
+            alvo.textContent = textos[valores.indexOf(Math.min(...validos))];
+        })();
 
         if (stickyCta && 'IntersectionObserver' in window) {
-            let faqVisible = false;
-            let footerVisible = false;
+            let heroCtaPassou = false;   // a pessoa já rolou além do botão grande do topo
+            let planosVisiveis = false;  // a seção de planos está na tela
 
             function updateStickyCta() {
-                if (faqVisible && !footerVisible) {
-                    stickyCta.classList.add('show');
-                } else {
-                    stickyCta.classList.remove('show');
-                }
+                const mostrar = heroCtaPassou && !planosVisiveis;
+                stickyCta.classList.toggle('show', mostrar);
+                document.body.classList.toggle('sticky-bar-visible', mostrar);
             }
 
-            if (faqEl) {
-                const faqObs = new IntersectionObserver(
+            if (heroCtaEl) {
+                const heroObs = new IntersectionObserver(
                     (entries) => {
-                        faqVisible = entries[0].isIntersecting;
+                        const e = entries[0];
+                        // "passou" = saiu da tela POR CIMA (a pessoa já rolou além dele).
+                        // Se ele só está mais abaixo (ainda não chegou nele), não conta.
+                        heroCtaPassou = !e.isIntersecting && e.boundingClientRect.top < 0;
                         updateStickyCta();
-                    },
-                    { threshold: 0.35 }
+                    }
                 );
-                faqObs.observe(faqEl);
+                heroObs.observe(heroCtaEl);
             }
 
-            if (footerEl) {
-                const footerObs = new IntersectionObserver(
+            if (packagesEl) {
+                const packagesObs = new IntersectionObserver(
                     (entries) => {
-                        footerVisible = entries[0].isIntersecting;
+                        planosVisiveis = entries[0].isIntersecting;
                         updateStickyCta();
                     },
-                    { threshold: 0.01 }
+                    // a barra some um pouco ANTES dos planos chegarem nela (não cobre o título dos planos)
+                    { rootMargin: '0px 0px -25% 0px' }
                 );
-                footerObs.observe(footerEl);
+                packagesObs.observe(packagesEl);
             }
         }
     </script>
@@ -1828,9 +1839,9 @@
     </script>
     <script>
     // ===== CARREGAMENTO ADIADO DO VÍDEO DA VSL (Wistia) =====
-    // Só baixa os scripts do player quando o vídeo está perto de aparecer na tela,
-    // em vez de carregar assim que a página abre. Isso deixa o primeiro carregamento
-    // do site mais rápido, já que o player da Wistia não compete por banda logo de cara.
+    // Em vez de baixar o player da Wistia assim que a página abre (competindo por
+    // conexão com fontes, CSS e imagens), espera o resto da página terminar de
+    // carregar e aproveita um momento ocioso do navegador.
     (function() {
         const wrapper = document.getElementById('vslVideoWrapper');
         if (!wrapper) return;
@@ -1852,12 +1863,6 @@
             document.body.appendChild(s2);
         }
 
-        // O vídeo já aparece bem no topo da página (acima da dobra, dentro da área
-        // visível assim que a página abre), então "esperar rolar até ele" não faria
-        // diferença — o navegador consideraria ele "visível" quase instantaneamente.
-        // Por isso, a estratégia aqui é: deixar o resto da página crítica (textos,
-        // fontes, CSS, imagens) carregar primeiro, e só então buscar o player da
-        // Wistia, aproveitando um momento em que o navegador está ocioso.
         function agendarCarregamento() {
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(carregarWistia, { timeout: 2000 });
@@ -1872,10 +1877,13 @@
             window.addEventListener('load', agendarCarregamento);
         }
 
-        // Rede de segurança: se por algum motivo o vídeo estiver bem mais abaixo
-        // na página (layout diferente, tela maior etc.) e a pessoa rolar até ele
-        // antes do load terminar, carrega na hora também.
-        if ('IntersectionObserver' in window) {
+        // Rede de segurança SÓ pra quando o vídeo está fora da tela inicial: se a pessoa
+        // rolar até ele antes do load terminar, carrega na hora. Se ele já está visível
+        // desde o início (caso atual), NÃO usamos o observer — ele dispararia
+        // imediatamente e anularia o adiamento.
+        const r = wrapper.getBoundingClientRect();
+        const jaVisivelNoInicio = r.top < window.innerHeight && r.bottom > 0;
+        if (!jaVisivelNoInicio && 'IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1883,7 +1891,7 @@
                         observer.disconnect();
                     }
                 });
-            });
+            }, { rootMargin: '400px 0px' });
             observer.observe(wrapper);
         }
     })();
