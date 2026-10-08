@@ -311,7 +311,7 @@
         .logo-container { margin-bottom: 32px; }
  
         .logo {
-            width: 192px;
+            width: 160px;
             max-width: 90%;
             height: auto;
             margin: 0 auto;
@@ -338,17 +338,20 @@
  
         .benefits { font-size: 1.125rem; color: #d1d5db; margin-bottom: 32px; }
         .benefits p { margin-bottom: 8px; }
+        .benefits-pos-cta { margin: 22px 0 0; }
  
         .user-counter {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 9px;
             background: rgba(0, 255, 65, 0.1);
             border: 2px solid #00ff41;
-            padding: 12px 24px;
+            padding: 8px 18px;
             border-radius: 9999px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+            font-size: 0.9rem;
         }
+        .user-counter .icon { width: 17px; height: 17px; }
  
         .video-placeholder {
             max-width: 896px;
@@ -955,7 +958,7 @@
 
         /* Media Queries */
         @media (min-width: 768px) {
-            .logo { width: 320px; }
+            .logo { width: 270px; }
             .features-title { font-size: 2.5rem; }
             .features-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
             .packages-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1084,25 +1087,20 @@
         <div class="hero-bg animate-pulse-slow"></div>
         <div class="hero-content">
             <div class="logo-container animate-float">
-                <img src="https://static.lumi.new/03/03af9622056718bde17a728ece6c9024.webp" alt="New Xiter Logo" class="logo" width="192" height="192">
+                <img src="https://static.lumi.new/03/03af9622056718bde17a728ece6c9024.webp" alt="New Xiter Logo" class="logo" width="160" height="74">
             </div>
  
             <h1>
                 O MELHOR <span class="text-neon">PAINEL XIT</span> PRA DAR <span class="text-neon-red">FULL VERMELHO!</span>
             </h1>
  
-            <div class="benefits">
-                <p>✅ Painel com + <strong style="color: #00ff41;">15 mil  Players</strong> Ativos</p>
-                <p>🎯 Sua mira vai dar só <span style="color: #ef4444; font-weight: 700;">vermelho!</span> </p>
-            </div>
- 
             <div class="user-counter animate-pulse-scale">
-                <svg class="icon" style="color: #00ff41;" width="20" height="20" viewBox="0 0 24 24">
+                <svg class="icon" style="color: #00ff41;" width="17" height="17" viewBox="0 0 24 24">
                     <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
                     <circle cx="9" cy="7" r="4"/>
                     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                 </svg>
-                <span><strong style="color: #00ff41; font-size: 1.25rem;" id="user-count">994</strong> <span style="color: #d1d5db;">Players online agora!</span></span>
+                <span><strong style="color: #00ff41; font-size: 1.05rem;" id="user-count">994</strong> <span style="color: #d1d5db;">Players online agora!</span></span>
             </div>
  
             <!-- Wistia Video (carregamento adiado: o player só é baixado depois que o
@@ -1123,6 +1121,11 @@
                 🎯 QUERO MEU PAINEL XIT!
             </a>
  
+            <div class="benefits benefits-pos-cta">
+                <p>✅ Painel com + <strong style="color: #00ff41;">10 mil  Players</strong> Ativos</p>
+                <p>🎯 Sua mira vai dar só <span style="color: #ef4444; font-weight: 700;">vermelho!</span> </p>
+            </div>
+ 
             <div class="cta-social-proof">
                 <div class="row">
                     <span>⭐</span>
@@ -1138,7 +1141,7 @@
  
     <!-- Features Section -->
     <section class="features">
-        <h2 class="features-title">Por que <span class="text-neon">15.000+ Players</span> escolheram nosso painel?</h2>
+        <h2 class="features-title">Por que <span class="text-neon">10.000+ Players</span> escolheram nosso painel?</h2>
         <div class="features-grid">
             <!-- Card 1: Aimbot Legit -->
             <div class="feature-card">
@@ -1268,7 +1271,7 @@
  
         <div style="max-width:480px; margin: 0 auto;">
             <div class="stats-card">
-                <p class="stats-number">15.000+</p>
+                <p class="stats-number">10.000+</p>
                 <p class="stats-text">Players Satisfeitos</p>
                 <p class="stats-subtext">E você será o próximo!</p>
             </div>
@@ -1289,11 +1292,11 @@
                 <h3 class="package-title"> <span class="text-neon-red"> </span> ANDROID</h3>
                 <p class="package-subtitle">Painel XIT mais vendido Android!</p>
                 <ul class="package-features">
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Painel Mod Menu FFH4X + BYPASS</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Mira Automática 100% Full Capa</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Todas Armas</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Painel Mod Menu FFH4X + BYPASS</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Mira Automática 100% Full Capa</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Todas Armas</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>UMP AUTOMÁTICA</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Sensi VIP Full Capa </span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Mira que grudar</span></li>
@@ -1313,7 +1316,7 @@
                 <div class="package-pricing">
                     <p class="package-old-price">De R$ 149,97</p>
                     <p class="package-label">Por apenas</p>
-                    <p class="package-price">R$27,90</p>
+                    <p class="package-price">R$19,90</p>
                 </div>
                 <a href="https://link.syncpayments.com.br/koO9K4" target="_blank" class="package-button animate-neon-green" style="display:block;text-align:center;text-decoration:none;">🛒 COMPRAR AGORA!</a>
             </div>
@@ -1325,11 +1328,11 @@
                 <h3 class="package-title"> <span class="text-neon-red"> </span> IPHONE/IOS</h3>
                 <p class="package-subtitle">Painel XIT mais vendido iPhone/iOS!</p>
                 <ul class="package-features">
-                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Painel Mod Menu FFH4X + BYPASS</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Mira Automática 100% Full Capa</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Todas Armas</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
+                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Painel Mod Menu FFH4X + BYPASS</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Mira Automática 100% Full Capa</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Todas Armas</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#00ff41" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(0,255,65,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>UMP AUTOMÁTICA</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Sensi VIP Full Capa </span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Mira que grudar</span></li>
@@ -1349,7 +1352,7 @@
                 <div class="package-pricing">
                     <p class="package-old-price">De R$ 197,97</p>
                     <p class="package-label">Por apenas</p>
-                    <p class="package-price">R$27,90</p>
+                    <p class="package-price">R$19,90</p>
                 </div>
                 <a href="https://link.syncpayments.com.br/zJi3BY" target="_blank" class="package-button animate-neon-green" style="display:block;text-align:center;text-decoration:none;">🛒 COMPRAR AGORA!</a>
             </div>
@@ -1366,9 +1369,9 @@
                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>No Recoil (não espalhar tiros!)</span></li>
                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Bypass + Certificado</span></li>
                     <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Bônus: Painel FreeStyle</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
-                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444" style="flex-shrink:0;margin-top:2px;"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Full Capa</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(234,179,8,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Proxy HS Alto + HS Pescoço</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(234,179,8,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>Rastreamento de cabeça</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#eab308" style="flex-shrink:0;margin-top:2px;filter:drop-shadow(0 0 4px rgba(234,179,8,0.65));"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg><span>2x Automática Full Capa</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>UMP 100% AUTOMÁTICA</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Painel Fov + ESP</span></li>
                     <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" style="stroke:#00ff41;flex-shrink:0;margin-top:2px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>2x Aimbot</span></li>
@@ -1478,7 +1481,7 @@
     <footer id="footer">
         <div class="footer-content">
             <div class="footer-logo-wrap">
-                <img src="img site/logo new xiter.png" alt="New Xiter Logo" class="footer-logo" width="180" height="180">
+                <img src="img site/logo new xiter.png" alt="New Xiter Logo" class="footer-logo" width="180" height="83">
             </div>
  
             <button class="footer-saiba-btn" id="saibaMaisBtn" onclick="toggleSaibaMais()">
